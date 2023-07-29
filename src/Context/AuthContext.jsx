@@ -42,13 +42,19 @@ const AuthContext = ({ children }) => {
         localStorage.setItem("User", JSON.stringify(response))
     }, [registerInfo])
 
+    const logOut = useCallback(() => {
+        localStorage.removeItem("User");
+        setUser(null)
+    }, [])
+
     const contextData = {
         user,
         registerInfo,
         updateRegisterInfo,
         registerUser,
         registerError,
-        isRegisterLoading
+        isRegisterLoading,
+        logOut
     }
 
     return (
