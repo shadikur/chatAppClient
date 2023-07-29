@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css"
 import App from './App'
+import AuthContext from './Context/AuthContext'
 
 
 
@@ -37,5 +38,7 @@ const routes = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={routes} />
+  <AuthContext>
+    <RouterProvider router={routes} />
+  </AuthContext>
 )
