@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css"
 import App from './App'
 import AuthContext from './Context/AuthContext'
+import Home from './pages/Home'
 
 
 
@@ -16,6 +17,11 @@ const routes = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
+      {
+        path: "/",
+        element: <Home />
+
+      },
       {
         path: "/chat",
         element: <Chat />,
@@ -31,7 +37,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "*",
-        element: <Chat />
+        element: <Home />
       }
     ]
   },
